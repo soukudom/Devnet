@@ -116,6 +116,7 @@ def getTaskResult(file_id):
     processTaskResult(task_result)
 
 if __name__ == "__main__":
+    print("Script in progress...")
     TOKEN = getAuthToken()["token"]
     dev_ids = getAllDevicesIds()
     task_id = sendCommandToAllDevices(dev_ids)

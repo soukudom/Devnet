@@ -64,6 +64,10 @@ if __name__ == "__main__":
     print("Script in progress...")
     # Get and process data from DNAC
     for i in list_network_devices()["response"]:
+        if i["hostname"] is None:
+            if DEBUG:
+                print("Skiping empty hostname...")
+            continue
         result = {"hostname":"","modules":0,"fieldreplaceable":0}
         result["hostname"] = i["hostname"]
         dev_id = ip_to_id(i["managementIpAddress"])            
